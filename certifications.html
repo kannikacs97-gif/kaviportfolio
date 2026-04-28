@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Kavana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Kavana.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html" class="active">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container" style="padding-top: 50px;">
+            <h2 class="section-title" data-aos="fade-up">My <span>Certifications</span></h2>
+            
+            <div class="certifications-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Certificate 1 -->
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="100" style="background: var(--card-bg); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); text-align: center; transition: transform 0.3s;">
+                    <i class="fa-solid fa-award" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 0.5rem;">Web Development Bootcamp</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Issued by Udemy - 2023</p>
+                    <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Certificate</a>
+                </div>
+
+                <!-- Certificate 2 (Placeholder) -->
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="200" style="background: var(--card-bg); border-radius: 12px; padding: 2rem; border: 1px dashed var(--text-muted); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 250px;">
+                    <i class="fa-solid fa-plus" style="font-size: 2rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--text-muted); font-size: 1.2rem;">Future Certificate</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">To be added soon...</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p>&copy; <span id="year"></span> Kavana. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelectorAll('.cert-card').forEach(card => {
+            if (!card.style.border.includes('dashed')) {
+                card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-5px)');
+                card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
+            }
+        });
+    </script>
+</body>
+</html>
